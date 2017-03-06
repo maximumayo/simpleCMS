@@ -7,9 +7,7 @@ require_once("functions.php");
 <head>
     <meta charset="UTF-8">
     <title>simpleCMS</title>
-    <style>
 
-    </style>
 </head>
 <body>
 
