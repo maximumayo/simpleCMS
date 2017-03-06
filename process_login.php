@@ -1,0 +1,33 @@
+<?php
+
+require_once("config.php");
+require_once("functions.php");
+
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+$validation = validateLogin($_POST);
+
+if (!$validation[0]) {
+    $error = http_build_query(array("error" => $validation[1]));
+    header("Location: index.php?" . $error);
+    exit;
+}
+
+$user = findUser($username);
+
+if (count($user) > 1) {
+    exit ("duplicate username");
+}
+
+if (count($user) === 0 || !password_verify($password, $user[0]["password"])) {
+    exit ("username or password is invalid");
+}
+
+$user = $user[0];
+
+if (loginUser($user)) {
+    echo "user is logged in";
+} else {
+    echo "could not login user";
+}
