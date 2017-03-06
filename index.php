@@ -1,13 +1,10 @@
-<?php
-require_once("functions.php");
-?>
+<?php require_once("functions.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>simpleCMS</title>
-
 </head>
 <body>
 
@@ -19,11 +16,10 @@ require_once("functions.php");
 
     <label for="username">Username</label>
     <input type="text" name="username" id="username">
-
     <label for="password">Password</label>
     <input type="password" name="password" id="password">
-
     <input type="submit" value="Login">
+
 </form>
 
 </body>

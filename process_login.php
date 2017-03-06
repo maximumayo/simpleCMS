@@ -25,9 +25,9 @@ if (count($user) === 0 || !password_verify($password, $user[0]["password"])) {
 }
 
 $user = $user[0];
-
+//take user to posts page when logged in
 if (loginUser($user)) {
-    echo "user is logged in";
+    header("Location: posts/index.php");
 } else {
     echo "could not login user";
 }

@@ -73,3 +73,16 @@ function returnLoginError()
     }
     return $errorStr;
 }
+
+function getPosts()
+{
+    $connectString = "mysql:dbname=" . DATABASE_NAME . ";host=localhost";
+
+    $pdo = new PDO($connectString, DATABASE_USERNAME, DATABASE_PASSWORD);
+
+    $sql = "SELECT id, title, body FROM posts";
+
+    $result = $pdo->query($sql);
+
+    return $result;
+}
