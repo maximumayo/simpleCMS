@@ -7,7 +7,7 @@
     <h2>Posts</h2>
 
     <div>
-        <!--loop through and diplay content from db-->
+        <!--loop through and display content from db-->
         <?php foreach ($posts as $post): ?>
             <p><?php echo $post["title"]; ?></p>
         <?php endforeach; ?>

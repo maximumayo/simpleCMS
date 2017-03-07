@@ -1,10 +1,25 @@
 <?php
 
+/**
+ * Class DB - streamline connecting to the database
+ */
+class DB
+{
+    private static $connection;
+
+    public static function getConnection()
+    {
+        if (!self::$connection) {
+            $connectString = "mysql:dbname=" . DATABASE_NAME . ";host=localhost";
+            self::$connection = new PDO($connectString, DATABASE_USERNAME, DATABASE_PASSWORD);
+        }
+        return self::$connection;
+    }
+}
+
 function findUser($username)
 {
-    $connectString = "mysql:dbname=" . DATABASE_NAME . ";host=localhost";
-
-    $pdo = new PDO($connectString, DATABASE_USERNAME, DATABASE_PASSWORD);
+    $pdo = DB::getConnection();
 
     $sql = "SELECT * FROM users WHERE username = :username";
 
@@ -58,7 +73,7 @@ function validateLogin($details)
     return [true, $errors];
 }
 
-function returnLoginError()
+function returnPageError()
 {
     $errorStr = "";
     if (isset($_GET["error"])) {
@@ -76,9 +91,7 @@ function returnLoginError()
 
 function getPosts()
 {
-    $connectString = "mysql:dbname=" . DATABASE_NAME . ";host=localhost";
-
-    $pdo = new PDO($connectString, DATABASE_USERNAME, DATABASE_PASSWORD);
+    $pdo = DB::getConnection();
 
     $sql = "SELECT id, title, body FROM posts";
 

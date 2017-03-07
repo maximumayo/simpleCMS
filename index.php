@@ -3,7 +3,7 @@
 
     <h2>Login</h2>
 
-<?php echo returnLogInError(); ?>
+<?php echo returnPageError(); ?>
 
     <form action="process_login.php" method="post">
 
