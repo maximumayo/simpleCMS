@@ -1,7 +1,7 @@
 <?php
 
-require_once("config.php");
-require_once("functions.php");
+require_once("includes/config.php");
+require_once("includes/functions.php");
 
 $username = $_POST["username"];
 $password = $_POST["password"];
