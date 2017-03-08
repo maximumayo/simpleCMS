@@ -153,4 +153,20 @@ function getPost($id)
     return $row;
 }
 
+function deletePost($id)
+{
+
+    $pdo = DB::getConnection();
+
+    $sql = "DELETE FROM posts WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $deleted = $statement->execute([
+        ":id" => $id
+    ]);
+
+    return $deleted;
+}
+
 ?>
