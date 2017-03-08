@@ -99,3 +99,58 @@ function getPosts()
 
     return $result;
 }
+
+function createPost($data)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "INSERT INTO posts (title, body, published) VALUES (:title, :body, :published)";
+
+    $statement = $pdo->prepare($sql);
+
+    $inserted = $statement->execute([
+        ":title" => $data["title"],
+        ":body" => $data["body"],
+        ":published" => $data["published"]
+    ]);
+
+    return $inserted;
+}
+
+
+function editPost($id, $data)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "UPDATE posts SET title = :title, body = :body, published = :published WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $edited = $statement->execute([
+        ":id" => $id,
+        ":title" => $data["title"],
+        ":body" => $data["body"],
+        ":published" => $data["published"]
+    ]);
+
+    return $edited;
+}
+
+function getPost($id)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "SELECT * FROM posts WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $statement->execute([
+        ":id" => $id
+    ]);
+
+    $row = $statement->fetch();
+
+    return $row;
+}
+
+?>

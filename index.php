@@ -2,8 +2,9 @@
 <?php require_once("includes/header.php"); ?>
 
     <h2>Login</h2>
-
-<?php echo returnPageError(); ?>
+    <div>
+        <?php echo returnPageError(); ?>
+    </div>
 
     <form action="process_login.php" method="post">
 
