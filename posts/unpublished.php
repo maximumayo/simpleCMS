@@ -12,6 +12,7 @@
                 <span><?php echo $post["title"]; ?></span>
                 <a href="edit.php?id=<?php echo $post['id'] ?>">Edit</a>
                 <a href="delete.php?id=<?php echo $post['id'] ?>">Delete</a>
+                <a href="publish.php?id=<?php echo $post['id'] ?>">Publish</a>
             </p>
         <?php endforeach; ?>
     </div>

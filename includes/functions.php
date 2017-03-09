@@ -209,4 +209,19 @@ function getUnpublishedPosts()
     return $result;
 }
 
+function publishPost($id)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "UPDATE posts SET published = 1 WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $edited = $statement->execute([
+        ":id" => $id
+    ]);
+
+    return $edited;
+}
+
 ?>
