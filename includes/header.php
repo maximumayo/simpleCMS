@@ -10,6 +10,7 @@
 <ul>
     <li><a href="/../Projects/simpleCMS/index.php">Home</a></li>
     <li><a href="/../Projects/simpleCMS/posts/index.php">Posts</a></li>
+    <li><a href="/../Projects/simpleCMS/posts/unpublished.php">Unpublished Posts</a></li>
     <li><a href="/../Projects/simpleCMS/posts/create.php">Create Post</a></li>
 
     <?php if (isset($_SESSION["id"])): ?>

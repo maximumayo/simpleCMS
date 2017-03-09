@@ -96,7 +96,7 @@ function getPosts()
 {
     $pdo = DB::getConnection();
 
-    $sql = "SELECT id, title, body FROM posts";
+    $sql = "SELECT id, title, body FROM posts WHERE published = 1";
 
     $result = $pdo->query($sql);
 
@@ -196,6 +196,17 @@ function displayPageMessage()
         }
     }
     return $info;
+}
+
+function getUnpublishedPosts()
+{
+    $pdo = DB::getConnection();
+
+    $sql = "SELECT id, title, body FROM posts WHERE published = 0";
+
+    $result = $pdo->query($sql);
+
+    return $result;
 }
 
 ?>
