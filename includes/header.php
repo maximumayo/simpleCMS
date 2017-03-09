@@ -6,6 +6,7 @@
     <title>simpleCMS</title>
 </head>
 <body>
+
 <ul>
     <li><a href="/../Projects/simpleCMS/index.php">Home</a></li>
     <li><a href="/../Projects/simpleCMS/posts/index.php">Posts</a></li>
@@ -17,3 +18,7 @@
         <li><a href="/../Projects/simpleCMS/index.php">Login</a></li>
     <?php endif; ?>
 </ul>
+
+<div>
+    <?php echo displayPageMessage(); ?>
+</div>

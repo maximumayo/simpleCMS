@@ -28,5 +28,5 @@ $user = $user[0];
 if (loginUser($user)) {
     header("Location: posts/index.php");
 } else {
-    echo "could not login user";
+    echo "could not log in user";
 }

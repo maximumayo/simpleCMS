@@ -1,7 +1,8 @@
 <?php require_once(__DIR__ . "/../includes/config.php"); ?>
 <?php require_once(__DIR__ . "/../includes/functions.php"); ?>
-<?php require_once(__DIR__ . "/../includes/header.php"); ?>
+<?php blocker(); ?>
 <?php $posts = getPosts(); ?>
+<?php require_once(__DIR__ . "/../includes/header.php"); ?>
     <h2>Posts</h2>
     <div><?php echo returnPageError(); ?></div>
     <div>

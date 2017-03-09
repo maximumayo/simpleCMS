@@ -51,8 +51,11 @@ function loginUser($user)
 
 function startSession()
 {
-    if (session_status() == PHP_SESSION_NONE) ;
-    session_start();
+    // if (session_status() === PHP_SESSION_NONE) ;
+    // session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 }
 
 function validateLogin($details)
@@ -167,6 +170,32 @@ function deletePost($id)
     ]);
 
     return $deleted;
+}
+
+function blocker()
+{
+    startSession();
+
+    if (!isset($_SESSION["id"])) {
+        header("Location: ../index.php?message=you must log in to access that page");
+    }
+}
+
+function displayPageMessage()
+{
+    $info = "";
+
+    if (isset($_GET["message"])) {
+        if (is_array($_GET["message"])) {
+            foreach ($_GET["message"] as $message) {
+                $info .= "<p>{$message}</p>";
+            }
+        } else {
+            $message = $_GET['message'];
+            $info .= "<p>{$message}</p>";
+        }
+    }
+    return $info;
 }
 
 ?>
