@@ -224,4 +224,34 @@ function publishPost($id)
     return $edited;
 }
 
+function createUser($data)
+{
+
+    $pdo = DB::getConnection();
+
+    $sql = "INSERT INTO users(username, password, first_name, last_name)
+            VALUES(:username, :password, :first_name, :last_name)";
+
+    $statement = $pdo->prepare($sql);
+
+    $inserted = $statement->execute([
+        ":username" => $data["username"],
+        ":password" => $data["password"],
+        ":first_name" => $data["first_name"],
+        ":last_name" => $data["last_name"]
+    ]);
+    return $inserted;
+}
+
+function getUsers()
+{
+    $pdo = DB::getConnection();
+
+    $sql = "SELECT id, username, first_name, last_name FROM users";
+
+    $result = $pdo->query($sql);
+
+    return $result;
+}
+
 ?>
