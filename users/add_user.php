@@ -19,7 +19,6 @@ require_once(__DIR__ . "/../includes/header.php");
         <label for="last_name">Last Name</label>
         <input type="text" name="last_name" id="last_name">
 
-
         <input type="submit" value="Create User">
 
     </form>

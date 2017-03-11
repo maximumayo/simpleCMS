@@ -158,7 +158,6 @@ function getPost($id)
 
 function deletePost($id)
 {
-
     $pdo = DB::getConnection();
 
     $sql = "DELETE FROM posts WHERE id = :id";
@@ -226,7 +225,6 @@ function publishPost($id)
 
 function createUser($data)
 {
-
     $pdo = DB::getConnection();
 
     $sql = "INSERT INTO users(username, password, first_name, last_name)
@@ -252,6 +250,41 @@ function getUsers()
     $result = $pdo->query($sql);
 
     return $result;
+}
+
+function getUser($id)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "SELECT * FROM users WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $statement->execute([
+        ":id" => $id
+    ]);
+
+    $row = $statement->fetch();
+
+    return $row;
+}
+
+function editUser($id, $data)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "UPDATE users SET username = :username, first_name = :first_name, last_name = :last_name WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $edited = $statement->execute([
+        ":id" => $id,
+        ":username" => $data["username"],
+        ":first_name" => $data["first_name"],
+        ":last_name" => $data["last_name"]
+    ]);
+
+    return $edited;
 }
 
 ?>

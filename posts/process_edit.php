@@ -1,7 +1,7 @@
-<?php require_once(__DIR__ . "/../includes/config.php"); ?>
-<?php require_once(__DIR__ . "/../includes/functions.php"); ?>
-<?php blocker(); ?>
-<?php
+<?php require_once(__DIR__ . "/../includes/config.php");
+require_once(__DIR__ . "/../includes/functions.php");
+blocker();
+
 $id = $_POST["id"];
 
 if (isset($_POST["published"])) {
