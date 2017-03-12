@@ -7,6 +7,7 @@ $user = getUser($_GET["id"]);
 ?>
 
     <h2>Edit User</h2>
+    <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
     <div><?php echo returnPageError(); ?></div>
 
     <form action="process_edit_user.php" method="post">
