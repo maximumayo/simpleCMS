@@ -1,3 +1,3 @@
 # simpleCMS
 
-### a simple ccontent management system made with PHP and MySQL
+### a simple content management system made with PHP and MySQL
