@@ -8,8 +8,8 @@
 <body>
 
 <ul>
-    <li><a href="/../Projects/simpleCMS/index.php">Home</a></li>
-
+    <li><a href="/../Projects/simpleCMS/home.php">Home</a></li>
+    <!--only display when user is logged in-->
     <?php if (isset($_SESSION["id"])): ?>
         <li><a href="/../Projects/simpleCMS/posts/index.php">Posts</a></li>
         <li><a href="/../Projects/simpleCMS/posts/unpublished.php">Unpublished Posts</a></li>

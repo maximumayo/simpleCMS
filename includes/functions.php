@@ -31,7 +31,7 @@ function findUser($username)
 
     if (!$executed) {
         print_r($statement->errorInfo());
-        exit("an error occured executing statement");
+        exit("an error occurred executing statement");
     }
 
     $result = $statement->fetchAll();
@@ -51,8 +51,6 @@ function loginUser($user)
 
 function startSession()
 {
-    // if (session_status() === PHP_SESSION_NONE) ;
-    // session_start();
     if (!isset($_SESSION)) {
         session_start();
     }
@@ -209,7 +207,10 @@ function getUnpublishedPosts()
 {
     $pdo = DB::getConnection();
 
-    $sql = "SELECT id, title, body FROM posts WHERE published = 0";
+    $sql = "SELECT posts.*, u1.username AS creator, u2.username AS updater FROM posts
+            INNER JOIN users u1 ON u1.id = posts.user_id
+            INNER JOIN users u2 ON u2.id = posts.last_updated_by
+            WHERE published = 0";
 
     $result = $pdo->query($sql);
 
@@ -323,6 +324,21 @@ function deleteUser($id)
         ":id" => $id
     ]);
     return $deleted;
+}
+
+function doValidation($details, $toBeValidated)
+{
+    $errors = [];
+
+    foreach ($toBeValidated as $input) {
+        if (!isset($details[$input]) || strlen($details[$input]) === 0) {
+            $errors[$input] = "$input cannot be empty";
+        }
+    }
+    if (count($errors) !== 0) {
+        return [false, $errors];
+    }
+    return [true, []];
 }
 
 ?>

@@ -13,6 +13,9 @@
                 <a href="edit.php?id=<?php echo $post['id'] ?>">Edit</a>
                 <a href="publish.php?id=<?php echo $post['id'] ?>">Delete</a>
                 <a href="publish.php?id=<?php echo $post['id'] ?>">Publish</a>
+                <br><span><?php echo $post["body"]; ?></span>
+                <br><span>created by: <?php echo $post['creator']; ?></span>
+                <br><span>last updated by: <?php echo $post['updater']; ?></span>
             </p>
         <?php endforeach; ?>
     </div>

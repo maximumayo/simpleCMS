@@ -9,12 +9,12 @@
     <form action="process_create.php" method="post">
 
         <div>
-            <label for="title">Title of Post</label>
+            <label for="title">Title of Post</label><br>
             <input type="text" name="title" id="title">
         </div>
 
         <div>
-            <label for="body">Body of Post</label>
+            <label for="body">Body of Post</label><br>
             <textarea name="body" id="body"></textarea>
         </div>
 
@@ -25,7 +25,7 @@
         </div>
 
         <div>
-            <input type="submit" value="Create Post">
+            <input type="submit" value="Create Post" class="click">
         </div>
 
     </form>

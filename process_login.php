@@ -15,12 +15,8 @@ if (!$validation[0]) {
 
 $user = findUser($username);
 
-if (count($user) > 1) {
-    exit ("duplicate username");
-}
-
 if (count($user) === 0 || !password_verify($password, $user[0]["password"])) {
-    exit ("username or password is invalid");
+    exit ("username or password is invalid" . " " . "<a href= 'index.php'>I understand</a>");
 }
 
 $user = $user[0];
@@ -30,3 +26,4 @@ if (loginUser($user)) {
 } else {
     echo "could not log in user";
 }
+?>
