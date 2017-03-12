@@ -6,6 +6,7 @@ require_once(__DIR__ . "/../includes/header.php");
 ?>
 
     <h2>Add User</h2>
+    <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
     <div><?php echo returnPageError(); ?></div>
 
     <form action="process_user.php" method="post">

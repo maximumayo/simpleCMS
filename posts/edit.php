@@ -5,6 +5,7 @@
 <?php $post = getPost($_GET["id"]); ?>
 
     <h2>Edit Post</h2>
+    <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
     <div>
         <?php echo returnPageError(); ?>
     </div>
