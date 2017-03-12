@@ -303,4 +303,18 @@ function editUserPass($id, $data)
     return $edited;
 }
 
+function deleteUser($id)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "DELETE FROM users WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $deleted = $statement->execute([
+        ":id" => $id
+    ]);
+    return $deleted;
+}
+
 ?>

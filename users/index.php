@@ -12,7 +12,9 @@
                 <span><?php echo "FIRST NAME: " . $user["first_name"] . " " . "LAST NAME: " . $user["last_name"]; ?></span>
             </p>
             <a href="edit_user.php?id=<?php echo $user['id']; ?>">Edit</a>
-            <a href="delete.php?id=<?php echo $user['id']; ?>">Delete</a>
+            <?php if ($_SESSION['id'] != $user['id']): ?>
+                <a href="delete_user.php?id=<?php echo $user['id']; ?>">Delete</a>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 <?php require_once(__DIR__ . "/../includes/footer.php"); ?>
