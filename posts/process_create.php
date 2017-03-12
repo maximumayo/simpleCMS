@@ -1,6 +1,11 @@
 <?php
 require_once(__DIR__ . "/../includes/config.php");
 require_once(__DIR__ . "/../includes/functions.php");
+blocker();
+startSession();
+
+$_POST['user_id'] = $_SESSION['id'];
+$_POST['last_updated_by'] = $_SESSION['id'];
 
 if (isset($_POST["published"])) {
     $_POST["published"] = 1;

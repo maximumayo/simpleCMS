@@ -96,7 +96,10 @@ function getPosts()
 {
     $pdo = DB::getConnection();
 
-    $sql = "SELECT id, title, body FROM posts WHERE published = 1";
+    $sql = "SELECT posts.*, u1.username AS creator, u2.username AS updater FROM posts
+            INNER JOIN users u1 ON u1.id = posts.user_id
+            INNER JOIN users u2 ON u2.id = posts.last_updated_by
+            WHERE published = 1";
 
     $result = $pdo->query($sql);
 
@@ -107,14 +110,17 @@ function createPost($data)
 {
     $pdo = DB::getConnection();
 
-    $sql = "INSERT INTO posts (title, body, published) VALUES (:title, :body, :published)";
+    $sql = "INSERT INTO posts (title, body, published, user_id, last_updated_by) 
+            VALUES (:title, :body, :published, :user_id, :last_updated_by)";
 
     $statement = $pdo->prepare($sql);
 
     $inserted = $statement->execute([
         ":title" => $data["title"],
         ":body" => $data["body"],
-        ":published" => $data["published"]
+        ":published" => $data["published"],
+        ":user_id" => $data["user_id"],
+        ":last_updated_by" => $data["last_updated_by"]
     ]);
 
     return $inserted;
@@ -125,7 +131,8 @@ function editPost($id, $data)
 {
     $pdo = DB::getConnection();
 
-    $sql = "UPDATE posts SET title = :title, body = :body, published = :published WHERE id = :id";
+    $sql = "UPDATE posts SET title = :title, body = :body, published = :published, last_updated_by = :last_updated_by
+            WHERE id = :id";
 
     $statement = $pdo->prepare($sql);
 
@@ -133,7 +140,8 @@ function editPost($id, $data)
         ":id" => $id,
         ":title" => $data["title"],
         ":body" => $data["body"],
-        ":published" => $data["published"]
+        ":published" => $data["published"],
+        ":last_updated_by" => $data["last_updated_by"]
     ]);
 
     return $edited;

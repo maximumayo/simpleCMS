@@ -2,6 +2,10 @@
 require_once(__DIR__ . "/../includes/functions.php");
 blocker();
 
+startSession();
+$_POST['last_updated_by'] = $_SESSION['id'];
+
+
 $id = $_POST["id"];
 
 if (isset($_POST["published"])) {
