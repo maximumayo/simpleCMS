@@ -287,4 +287,20 @@ function editUser($id, $data)
     return $edited;
 }
 
+function editUserPass($id, $data)
+{
+    $pdo = DB::getConnection();
+
+    $sql = "UPDATE users SET password = :password WHERE id = :id";
+
+    $statement = $pdo->prepare($sql);
+
+    $edited = $statement->execute([
+        ":password" => $data["password"],
+        ":id" => $id
+    ]);
+
+    return $edited;
+}
+
 ?>
