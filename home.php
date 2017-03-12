@@ -5,4 +5,6 @@
 
     <h3>Welcome back, <?php echo $_SESSION['username']; ?>! </h3>
 
+    <h4><?php echo date('l, F d, Y'); ?></h4>
+
 <?php require_once("includes/footer.php"); ?>
