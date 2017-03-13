@@ -2,12 +2,13 @@
 <?php require_once(__DIR__ . "/../includes/functions.php"); ?>
 <?php blocker(); ?>
 <?php require_once(__DIR__ . "/../includes/header.php"); ?>
-
     <h2>Create Post</h2>
+<?php if (isset($_SESSION["id"])): ?>
     <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
+<?php endif; ?>
     <div><?php echo returnPageError(); ?></div>
 
-    <form action="process_create.php" method="post">
+    <form action="process_create_post.php" method="post">
 
         <div>
             <label for="title">Title of Post</label><br>

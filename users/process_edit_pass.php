@@ -30,7 +30,7 @@ if (strlen($error) > 0) {
 } else {
     $_POST['password'] = password_hash($new_pass, PASSWORD_DEFAULT);
     if (editUserPass($id, $_POST)) {
-        header("Location: /../Projects/simpleCMS/users/index.php?id={$id}");
+        header("Location: /../Projects/simpleCMS/users/index.php?message=You have successfully changed you password");
     } else {
         header("Location: /../Projects/simpleCMS/users/edit_user.php?id={$id}&error=Could not change password");
     }

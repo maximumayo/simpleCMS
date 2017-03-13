@@ -10,7 +10,7 @@
         <?php echo returnPageError(); ?>
     </div>
 
-    <form action="process_edit.php" method="post">
+    <form action="process_edit_post.php" method="post">
 
         <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
 
@@ -21,9 +21,7 @@
 
         <div>
             <label for="body">Body of Post</label>
-            <textarea name="body" id="body">
-            <?php echo $post["body"]; ?>
-        </textarea>
+            <textarea name="body" id="body"><?php echo $post["body"];?></textarea>
         </div>
 
         <div>

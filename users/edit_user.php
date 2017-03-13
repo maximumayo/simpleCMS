@@ -1,13 +1,13 @@
-<?php
-require_once(__DIR__ . "/../includes/config.php");
-require_once(__DIR__ . "/../includes/functions.php");
-blocker();
-require_once(__DIR__ . "/../includes/header.php");
-$user = getUser($_GET["id"]);
-?>
+<?php require_once(__DIR__ . "/../includes/config.php"); ?>
+<?php require_once(__DIR__ . "/../includes/functions.php"); ?>
+<?php blocker(); ?>
+<?php require_once(__DIR__ . "/../includes/header.php"); ?>
+<?php $user = getUser($_GET["id"]); ?>
 
     <h2>Edit User</h2>
+<?php if (isset($_SESSION["id"])): ?>
     <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
+<?php endif; ?>
     <div><?php echo returnPageError(); ?></div>
 
     <form action="process_edit_user.php" method="post">

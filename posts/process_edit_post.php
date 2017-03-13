@@ -14,7 +14,7 @@ $validation = doValidation($_POST, $toBeValidated);
 if (!$validation[0]) {
     $error = $validation[1];
     $error = http_build_query(array('error' => $error));
-    header("Location: /../Projects/simpleCMS/posts/create.php?" . $error);
+    header("Location: /../Projects/simpleCMS/posts/create_post.php?" . $error);
     exit;
 }
 
@@ -29,6 +29,6 @@ if (isset($_POST["published"])) {
 if (editPost($id, $_POST)) {
     header("Location: index.php?id={$id}");
 } else {
-    header("Location: edit.php?id={$id}&error=could not edit post");
+    header("Location: edit_post.php?id={$id}&error=could not edit post");
 }
 ?>

@@ -13,7 +13,7 @@
     <?php if (isset($_SESSION["id"])): ?>
         <li><a href="/../Projects/simpleCMS/posts/index.php">Posts</a></li>
         <li><a href="/../Projects/simpleCMS/posts/unpublished.php">Unpublished Posts</a></li>
-        <li><a href="/../Projects/simpleCMS/posts/create.php">Create Post</a></li>
+        <li><a href="/../Projects/simpleCMS/posts/create_post.php">Create Post</a></li>
         <li><a href="/../Projects/simpleCMS/users/index.php">Users</a></li>
         <li><a href="/../Projects/simpleCMS/users/add_user.php">Create User</a></li>
     <?php endif; ?>

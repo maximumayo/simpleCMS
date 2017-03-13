@@ -15,7 +15,7 @@ $validation = doValidation($_POST, $toBeValidated);
 if (!$validation[0]) {
     $error = $validation[1];
     $error = http_build_query(array('error' => $error));
-    header("Location: /../Projects/simpleCMS/posts/create.php?" . $error);
+    header("Location: /../Projects/simpleCMS/posts/create_post.php?" . $error);
     exit;
 }
 
@@ -28,6 +28,6 @@ if (isset($_POST["published"])) {
 if (createPost($_POST)) {
     header("Location: index.php");
 } else {
-    header("Location: create.php?error=could not create page");
+    header("Location: create_post.php?error=could not create page");
 }
 ?>

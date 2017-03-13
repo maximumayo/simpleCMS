@@ -4,7 +4,9 @@
 <?php $users = getUsers(); ?>
 <?php require_once(__DIR__ . "/../includes/header.php"); ?>
     <h2>Users</h2>
+<?php if (isset($_SESSION["id"])): ?>
     <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
+<?php endif; ?>
     <div><?php echo returnPageError(); ?></div>
     <div>
         <?php foreach ($users as $user): ?>
