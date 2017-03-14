@@ -6,7 +6,9 @@
 
     <h2>Edit Post</h2>
     <div>
-        <?php echo returnPageError(); ?>
+        <span class="errorText">
+            <?php echo returnPageError(); ?>
+        </span>
     </div>
 
     <form action="process_edit_post.php" method="post">

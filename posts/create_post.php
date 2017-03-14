@@ -3,7 +3,11 @@
 <?php blocker(); ?>
 <?php require_once(__DIR__ . "/../includes/header.php"); ?>
     <h2>Create Post</h2>
-    <div><?php echo returnPageError(); ?></div>
+    <div>
+        <span class="errorText">
+            <?php echo returnPageError(); ?>
+        </span>
+    </div>
 
     <form action="process_create_post.php" method="post">
 

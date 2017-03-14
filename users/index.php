@@ -4,7 +4,9 @@
 <?php $users = getUsers(); ?>
 <?php require_once(__DIR__ . "/../includes/header.php"); ?>
     <h2>Users</h2>
-    <div><?php echo returnPageError(); ?></div>
+    <div>
+        <span class="errorText"><?php echo returnPageError(); ?></span>
+    </div>
     <div>
         <?php foreach ($users as $user): ?>
             <p>

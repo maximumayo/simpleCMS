@@ -16,7 +16,8 @@ if (!$validation[0]) {
 $user = findUser($username);
 
 if (count($user) === 0 || !password_verify($password, $user[0]["password"])) {
-    exit ("username or password is invalid" . " " . "<a href= 'index.php'>I understand</a>");
+    header("Location: index.php?error=username or password is invalid");
+    exit;
 }
 
 $user = $user[0];

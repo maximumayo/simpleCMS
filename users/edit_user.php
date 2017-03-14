@@ -5,7 +5,11 @@
 <?php $user = getUser($_GET["id"]); ?>
 
     <h2>Edit User</h2>
-    <div><?php echo returnPageError(); ?></div>
+    <div>
+        <span class="errorText">
+            <?php echo returnPageError(); ?>
+        </span>
+    </div>
 
     <form action="process_edit_user.php" method="post">
 

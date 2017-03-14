@@ -22,6 +22,10 @@ button {
     background-color: #ffffcc;
 }
 
+.errorText {
+    color: red;
+}
+
 ul {
     list-style: none;
     background-color: #eeeeee;

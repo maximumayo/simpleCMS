@@ -3,7 +3,9 @@
 
     <h2>Login</h2>
     <div>
-        <?php echo returnPageError(); ?>
+        <span class="errorText">
+            <?php echo returnPageError(); ?>
+        </span>
     </div>
 
     <form action="process_login.php" method="post">

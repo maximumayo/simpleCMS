@@ -4,7 +4,11 @@
 <?php $posts = getUnpublishedPosts(); ?>
 <?php require_once(__DIR__ . "/../includes/header.php"); ?>
     <h2>Unpublished Posts</h2>
-    <div><?php echo returnPageError(); ?></div>
+    <div>
+        <span class="errorText">
+            <?php echo returnPageError(); ?>
+        </span>
+    </div>
     <div>
         <!--loop through and display content from db-->
         <?php foreach ($posts as $post): ?>
