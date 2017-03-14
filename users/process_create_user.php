@@ -12,12 +12,12 @@ $username = $_POST["username"];
 $user = findUser($username);
 
 if (count($user) > 0) {
-    exit ("username already exists. please choose a different username." . " " . "<a href='add_user.php'>I understand</a>");
+    exit ("username already exists. please choose a different username." . " " . "<a href='create_user.php'>I understand</a>");
 }
 
 if (createUser($_POST)) {
     header("Location: index.php");
 } else {
-    header("Location: add_user.php?error=could not create user");
+    header("Location: create_user.php?error=could not create user");
 }
 ?>

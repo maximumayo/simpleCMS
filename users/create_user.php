@@ -5,10 +5,10 @@ blocker();
 require_once(__DIR__ . "/../includes/header.php");
 ?>
 
-    <h2>Add User</h2>
+    <h2>Create User</h2>
     <div><?php echo returnPageError(); ?></div>
 
-    <form action="process_user.php" method="post">
+    <form action="process_create_user.php" method="post">
 
         <label for="username">Username</label>
         <input type="text" name="username" id="username">

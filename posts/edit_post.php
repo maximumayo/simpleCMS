@@ -17,12 +17,12 @@
             <label for="title">Title of Post</label><br>
             <input type="text" name="title" id="title" value="<?php echo $post['title']; ?>">
         </div>
-
+        <br>
         <div>
             <label for="body">Body of Post</label><br>
-            <textarea name="body" id="body"><?php echo $post["body"];?></textarea>
+            <textarea name="body" id="body"><?php echo $post["body"]; ?></textarea>
         </div>
-
+        <br>
         <div>
             <label for="published">
                 <input type="checkbox" name="published" id="published" value=1
@@ -31,7 +31,7 @@
                     } ?>>Publish Post?
             </label>
         </div>
-
+        <br>
         <div>
             <button type="submit" value="Update Post">Update Post</button>
         </div>

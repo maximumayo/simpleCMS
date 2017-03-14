@@ -11,7 +11,7 @@
             <label for="title">Title of Post</label><br>
             <input type="text" name="title" id="title">
         </div>
-
+        <br>
         <div>
             <label for="body">Body of Post</label><br>
             <textarea name="body" id="body"></textarea>
