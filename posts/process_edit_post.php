@@ -14,7 +14,7 @@ $validation = doValidation($_POST, $toBeValidated);
 if (!$validation[0]) {
     $error = $validation[1];
     $error = http_build_query(array('error' => $error));
-    header("Location: /../Projects/simpleCMS/posts/create_post.php?" . $error);
+    header("Location: /../Projects/simpleCMS/posts/edit_post.php?" . $error);
     exit;
 }
 
