@@ -1,0 +1,50 @@
+textarea {
+    width: 50%;
+    height: 160px;
+    border: #008000 1px solid;
+    padding: 5px;
+    background-color: #fbfbfb;
+    font-size: 1.1em;
+}
+
+input[type=text], input[type=password] {
+    width: 15%;
+    border: #008000 1px solid;
+    padding: 5px;
+    font-size: 1em;
+}
+
+button {
+    font-size: 100%;
+}
+
+.postTitle {
+    background-color: #ffffcc;
+}
+
+ul {
+    list-style: none;
+    background-color: #eeeeee;
+}
+
+ul li {
+    display: inline-block;
+    margin: 1%;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#currentlyLogged {
+    background-color: #ffffff;
+    padding: .3%;
+}
+
+#currentlyLogged a:link,
+#currentlyLogged a:visited,
+#logIn a:link,
+#logIn a:visited {
+    color: #0000ee;
+    font-weight: bold;
+}

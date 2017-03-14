@@ -5,9 +5,6 @@
 <?php $user = getUser($_GET["id"]); ?>
 
     <h2>Edit User</h2>
-<?php if (isset($_SESSION["id"])): ?>
-    <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
-<?php endif; ?>
     <div><?php echo returnPageError(); ?></div>
 
     <form action="process_edit_user.php" method="post">
@@ -23,7 +20,7 @@
         <label for="last_name">Last Name</label>
         <input type="text" name="last_name" id="last_name" value="<?php echo $user['last_name'] ?>">
 
-        <input type="submit" value="Update User">
+        <button type="submit" value="Update User">Update User</button>
 
     </form>
 
@@ -51,7 +48,7 @@
         <label for="confirm_pass">Confirm New Password</label>
         <input type="password" id="confirm_pass" name="confirm_pass">
 
-        <input type="submit" value="Change Password">
+        <button type="submit" value="Change Password">Change Password</button>
 
     </form>
 

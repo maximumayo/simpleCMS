@@ -3,9 +3,6 @@
 <?php blocker(); ?>
 <?php require_once(__DIR__ . "/../includes/header.php"); ?>
     <h2>Create Post</h2>
-<?php if (isset($_SESSION["id"])): ?>
-    <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
-<?php endif; ?>
     <div><?php echo returnPageError(); ?></div>
 
     <form action="process_create_post.php" method="post">
@@ -19,15 +16,15 @@
             <label for="body">Body of Post</label><br>
             <textarea name="body" id="body"></textarea>
         </div>
-
+        <br>
         <div>
             <label for="published">
                 <input type="checkbox" name="published" id="published" value=1>Publish Post?
             </label>
         </div>
-
+        <br>
         <div>
-            <input type="submit" value="Create Post" class="click">
+            <button type="submit" value="Create Post">Create Post</button>
         </div>
 
     </form>

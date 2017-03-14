@@ -5,7 +5,6 @@
 <?php $post = getPost($_GET["id"]); ?>
 
     <h2>Edit Post</h2>
-    <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
     <div>
         <?php echo returnPageError(); ?>
     </div>
@@ -15,12 +14,12 @@
         <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
 
         <div>
-            <label for="title">Title of Post</label>
+            <label for="title">Title of Post</label><br>
             <input type="text" name="title" id="title" value="<?php echo $post['title']; ?>">
         </div>
 
         <div>
-            <label for="body">Body of Post</label>
+            <label for="body">Body of Post</label><br>
             <textarea name="body" id="body"><?php echo $post["body"];?></textarea>
         </div>
 
@@ -34,7 +33,7 @@
         </div>
 
         <div>
-            <input type="submit" value="Update Post">
+            <button type="submit" value="Update Post">Update Post</button>
         </div>
     </form>
 

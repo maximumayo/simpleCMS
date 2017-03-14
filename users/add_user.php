@@ -6,7 +6,6 @@ require_once(__DIR__ . "/../includes/header.php");
 ?>
 
     <h2>Add User</h2>
-    <h4>Currently logged in as: <?php echo $_SESSION['username']; ?> </h4>
     <div><?php echo returnPageError(); ?></div>
 
     <form action="process_user.php" method="post">
@@ -20,7 +19,7 @@ require_once(__DIR__ . "/../includes/header.php");
         <label for="last_name">Last Name</label>
         <input type="text" name="last_name" id="last_name">
 
-        <input type="submit" value="Create User">
+        <button type="submit" value="Create User">Create User</button>
 
     </form>
 

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>simpleCMS</title>
+    <link rel="stylesheet" href="/../Projects/simpleCMS/style.css">
 </head>
 <body>
 
@@ -16,12 +17,11 @@
         <li><a href="/../Projects/simpleCMS/posts/create_post.php">Create Post</a></li>
         <li><a href="/../Projects/simpleCMS/users/index.php">Users</a></li>
         <li><a href="/../Projects/simpleCMS/users/add_user.php">Create User</a></li>
-    <?php endif; ?>
-
-    <?php if (isset($_SESSION["id"])): ?>
-        <li><a href="/../Projects/simpleCMS/logout.php">Logout</a></li>
+        <li id="currentlyLogged">Currently logged in as: <?php echo $_SESSION['username'] . " " .
+                "<a href='/../Projects/simpleCMS/logout.php'>[ log out ]</a>"; ?>
+        </li>
     <?php else: ?>
-        <li><a href="/../Projects/simpleCMS/index.php">Login</a></li>
+        <li id="logIn"><a href="/../Projects/simpleCMS/index.php">[ log in ]</a></li>
     <?php endif; ?>
 </ul>
 
