@@ -4,7 +4,7 @@ require_once(__DIR__ . "/../includes/functions.php");
 startSession();
 $_POST["password"] = password_hash($_POST["username"], PASSWORD_DEFAULT);
 
-//$validation = validateLogin($_POST);
+$validation = validateLogin($_POST);
 
 //fields must not be left blank
 $toBeValidated = ['username', 'first_name', 'last_name'];

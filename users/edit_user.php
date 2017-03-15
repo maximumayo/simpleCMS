@@ -32,7 +32,7 @@
     <?php if (password_verify($user['username'], $user['password'])): ?>
 
         <p>
-            <span>
+            <span class="alertText">
                 By default your password is your username. Please change your password to secure your account.
             </span>
         </p>
