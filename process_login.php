@@ -27,4 +27,3 @@ if (loginUser($user)) {
 } else {
     echo "could not log in user";
 }
-?>

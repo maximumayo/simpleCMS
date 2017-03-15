@@ -7,4 +7,3 @@ if (deletePost($id)) {
 } else {
     header("Location: index.php?error=Could not delete post");
 }
-?>

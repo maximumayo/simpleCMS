@@ -13,4 +13,3 @@ if (publishPost($id)) {
 } else {
     header("Location: unpublished.php?message=Could not publish post");
 }
-?>

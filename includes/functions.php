@@ -340,5 +340,3 @@ function doValidation($details, $toBeValidated)
     }
     return [true, []];
 }
-
-?>

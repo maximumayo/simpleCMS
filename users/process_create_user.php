@@ -32,4 +32,3 @@ if (createUser($_POST)) {
 } else {
     header("Location: create_user.php?error=could not create user");
 }
-?>

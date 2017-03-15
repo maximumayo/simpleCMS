@@ -30,4 +30,3 @@ if (editPost($id, $_POST)) {
 } else {
     header("Location: edit_post.php?id={$id}&error=could not edit post");
 }
-?>

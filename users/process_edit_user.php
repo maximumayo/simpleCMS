@@ -11,4 +11,3 @@ if (editUser($id, $_POST)) {
 } else {
     header("Location: edit_user.php?id={$id}&error=could not update user");
 }
-?>

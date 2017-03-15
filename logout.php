@@ -8,5 +8,3 @@ $_SESSION = [];
 session_destroy();
 
 header("Location: /../Projects/simpleCMS/index.php?message=You have successfully logged out!");
-
-?>

@@ -14,4 +14,3 @@ if (deleteUser($id)) {
 } else {
     header("Location: /../Projects/simpleCMS/users/index.php?error=could not delete user");
 }
-?>

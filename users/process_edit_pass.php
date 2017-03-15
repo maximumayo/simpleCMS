@@ -35,4 +35,3 @@ if (strlen($error) > 0) {
         header("Location: /../Projects/simpleCMS/users/edit_user.php?id={$id}&error=Could not change password");
     }
 }
-?>

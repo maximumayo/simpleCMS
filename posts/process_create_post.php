@@ -30,4 +30,3 @@ if (createPost($_POST)) {
 } else {
     header("Location: create_post.php?error=could not create page");
 }
-?>
